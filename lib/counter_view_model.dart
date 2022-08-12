@@ -8,7 +8,7 @@ class CounterViewModel extends ChangeNotifier{
     isLoading = true;
     notifyListeners();
 
-    count++;
+    count = count + 2;
     isLoading = false;
     notifyListeners();
   }

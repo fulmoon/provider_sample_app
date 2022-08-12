@@ -1,6 +1,7 @@
-import 'package:counter_provider_sample_app/counter.dart';
-import 'package:counter_provider_sample_app/counter_inherited_widget.dart';
+import 'package:counter_provider_sample_app/counter_provider.dart';
+import 'package:counter_provider_sample_app/counter_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Counter(
-        count: 100,
-        child: CounterInheritedWidget(),
+      home: ChangeNotifierProvider(
+        create: (BuildContext context) => CounterViewModel(),
+        child: CounterProvider(),
       ),
     );
   }
